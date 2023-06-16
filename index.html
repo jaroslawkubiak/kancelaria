@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mariusz Przyborowski</title>
-</head>
-<body>
-    
-</body>
+    <link rel="canonical" href="https://kancelariaprzyborowski.pl/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script>
+      const fileVer = Date.now();
+      const head = document.getElementsByTagName("head")[0];
+
+      let scriptLink = document.createElement("script");
+      scriptLink.defer = true;
+      scriptLink.type = "module";
+      scriptLink.src = `script.js?v=${fileVer}`;
+      head.appendChild(scriptLink);
+
+      let handlebarsLink = document.createElement("script");
+      handlebarsLink.defer = true;
+      handlebarsLink.type = "module";
+      handlebarsLink.src = `handlebars.js?v=${fileVer}`;
+      head.appendChild(handlebarsLink);
+
+      let link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = `/dist/output.css?v=${fileVer}`;
+      head.appendChild(link);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  </head>
+  <body>
+    <div id="output"></div>
+
+    <script type="text/x-handlebars-template" id="template">
+      <div class="w-21 pt-11">
+        <div class="flex place-content-between items-start pt-12">
+          <img src="/img/logo.svg" class="h-20" />
+          <nav>
+            <ul class="flex">
+              {{#each navMenu}}
+                <li><a
+                    href={{this.link}}
+                    class="text-primary py-1 px-7 text-lg"
+                  >{{this.name}}</a></li>
+              {{/each}}
+              <a href="tel:+48534614514">
+                <img src="img/phone.svg" class="py-0 px-4" />
+              </a>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </script>
+  </body>
 </html>
