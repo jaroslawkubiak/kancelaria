@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="201" height="159" viewBox="0 0 201 159">
+  <g id="Group_21" data-name="Group 21" transform="translate(-375 -1798)">
+    <circle id="Ellipse_28" data-name="Ellipse 28" cx="79" cy="79" r="79" transform="translate(375 1798)" fill="#cd3100"/>
+    <ellipse id="Ellipse_30" data-name="Ellipse 30" cx="20.5" cy="20" rx="20.5" ry="20" transform="translate(535 1810)" fill="#00a475"/>
+    <g id="Ellipse_31" data-name="Ellipse 31" transform="translate(498 1897)" fill="none" stroke="#c7c7c7" stroke-width="5">
+      <ellipse cx="30.5" cy="30" rx="30.5" ry="30" stroke="none"/>
+      <ellipse cx="30.5" cy="30" rx="28" ry="27.5" fill="none"/>
+    </g>
+    <path id="bullseye-pointer-regular" d="M38.177,44.683l-33.768,9.6a2.7,2.7,0,0,0-.43,5.033l10.8,5.185L.715,78.558a2.446,2.446,0,0,0,0,3.462l3.462,3.462a2.449,2.449,0,0,0,3.462,0L21.7,71.424l5.185,10.8a2.7,2.7,0,0,0,5.033-.43l9.6-33.768a2.7,2.7,0,0,0-3.336-3.338Zm4.314,18.451-2.22,7.812A23.919,23.919,0,1,0,15.252,45.929l7.812-2.22A16.392,16.392,0,1,1,42.491,63.134ZM39.1,8A39.1,39.1,0,0,0,0,47.1c0,1.151.074,2.285.172,3.41A7.814,7.814,0,0,1,1.9,49.722L7.616,48.1c-.011-.334-.05-.661-.05-1A31.532,31.532,0,1,1,39.1,78.632c-.337,0-.664-.039-1-.05L36.476,84.3a7.763,7.763,0,0,1-.81,1.731c1.134.1,2.273.173,3.432.173A39.1,39.1,0,0,0,39.1,8Z" transform="translate(415.002 1831)" fill="#fff"/>
+  </g>
+</svg>
