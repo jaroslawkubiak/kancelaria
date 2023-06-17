@@ -697,12 +697,12 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .box-border {
@@ -816,6 +816,10 @@ video {
   height: 1rem;
 }
 
+.h-555 {
+  height: 555px;
+}
+
 .h-663 {
   height: 663px;
 }
@@ -826,6 +830,10 @@ video {
 
 .h-867 {
   height: 867px;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-1\/2 {
@@ -854,6 +862,14 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-45 {
+  flex: 0 0 45%;
 }
 
 .flex-shrink {
@@ -1856,9 +1872,9 @@ video {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-blue-200 {
+.bg-blue-800 {
   --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+  background-color: rgb(30 64 175 / var(--tw-bg-opacity));
 }
 
 .bg-dotActive {
@@ -1881,12 +1897,26 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-yellow-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(113 63 18 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\/img\/home-s1-bg\.jpg\'\)\] {
   background-image: url('/img/home-s1-bg.jpg');
 }
 
 .bg-\[url\(\'\/img\/home-s2-img2\.jpg\'\)\] {
   background-image: url('/img/home-s2-img2.jpg');
+}
+
+.bg-\[url\(\'\/img\/home-s4-bg\.jpg\'\)\] {
+  background-image: url('/img/home-s4-bg.jpg');
 }
 
 .decoration-slice {
@@ -2028,6 +2058,11 @@ video {
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .py-32 {
