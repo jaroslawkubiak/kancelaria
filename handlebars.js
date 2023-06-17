@@ -16,7 +16,7 @@
         text: "i prezesem firmy podatkowo-księgowej patrzę na problemy biznesu z merytoryczną wnikliwością, opierając się na wiedzy z wielu dziedzin i na praktycznym doświadczeniu.",
       },
     ],
-    sectionHeader: [
+    section2Header: [
       "NAWET",
       "NAJTRUDNIESZE",
       "PROBLEMY",
@@ -24,11 +24,19 @@
       "MOŻLIWE DO",
       "ROZWIĄZANIA",
     ],
-    sectionList: [
+    section2List: [
       "Klienci często zwracają się do mnie w trudnych sytuacjach biznesowych.",
       "<strong>Aby przejść obronną ręką przez skomplikowane kazusy podatkowe i prawne,</strong> niezbędna jest perfekcyjna wiedza, strategiczne podejście, wnikliwość, upór i konsekwencja w działaniu.",
-      "<strong>Dlatego w czasie współpracy łączę moje doświadczenie z różnych obszarów biznesu z wiedzą, która daje ogrom możliwości działania.<strong>",
-    ]
+      "<strong>Dlatego w czasie współpracy łączę moje doświadczenie z różnych obszarów biznesu z wiedzą, która daje ogrom możliwości działania.</strong>",
+    ],
+    section3LeftHeader: "Doświadczenie w pracy z klientami z <strong>kilkudziesięciu branż</strong> sprawia, że szybciej i skuteczniej znajduję rozwiązania.",
+    section3LeftText: "Łączenie doświadczenia z wielu branż oraz bieżące zarządzanie firmą księgowo-podatkową pozwala mi lepiej rozumieć problemy biznesu oraz patrzeć na wyzwania księgowo-podatkowe strategicznie, z szerokiej perspektywy. Często to detale wpływają na powodzenie w postępowaniach dlatego tak ważne jest wykorzystanie dużego spektrum doświadczeń.",
+    section3Industries: [
+      {img: "paliwowa.svg", text: "paliwowa"},
+      {img: "informatyczna.svg", text: "informatyczna"},
+      {img: "geodezyjna.svg", text: "geodezyjna"},
+      {img: "budowlana.svg", text: "budowlana"},
+  ]
   };
   const template = Handlebars.compile(document.getElementById("template").innerHTML);
   const filled = template(data);

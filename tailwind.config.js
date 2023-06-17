@@ -10,6 +10,7 @@ module.exports = {
         dotNotActive: "#fff",
         dotBorder: "#bfbfbf",
         industries: "#f0f0f0",
+        industriesText: "#a8a8a8",
         sectionList: "#E5E5E5",
       },
       width: {
@@ -20,8 +21,9 @@ module.exports = {
         "45rem": "45rem",
       },
       height: {
+        867: "867px",
         760: "760px",
-        631: "631px",
+        663: "663px",
       },
       lineHeight: {
         20: "3rem",

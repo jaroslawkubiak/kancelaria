@@ -38,62 +38,92 @@
     <!-- duration-2000 transition-all ease-in -->
     <!-- after:duration-2000 after:transition-all after:ease-in -->
     <script type="text/x-handlebars-template" id="template">
-      <div class="flex justify-center">
-        <div class="flex place-content-between items-start pt-12 w-1140">
-          <a href="#"><img src="/img/logo.svg" class="h-20" /></a>
-          <nav>
-            <ul id="nav-menu" class="flex pt-2">
-              {{#each navMenu}}
-                <li><a href={{this.link}} class="nav-link relative text-primary my-1 mx-7 text-lg">
-                    <span
-                      class="hidden after:duration-2000 after:transition-all after:ease-in after:content-[''] after:w-[calc(100%+1rem)] after:h-0.5 after:absolute after:bg-dotActive after:bottom-0 after:left-2/4 after:-translate-x-2/4"
-                    ></span>{{this.name}}</a></li>
-              {{/each}}
-              <a href="tel:+48534614514">
-                <img src="img/phone.svg" class="py-0 px-4" />
-              </a>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      <main class="flex w-full justify-center items-center flex-col">
-        <!-- hero section -->
-        <section class="flex justify-center w-1900 bg-no-repeat bg-center bg-[url('/img/home-s1-bg.jpg')]">
-          <div class="flex w-1200 h-760 p-8 relative">
-            <div class="w-456 absolute top-56 h-1/2 overflow-hidden">
-              <div class="dots flex gap-2"></div>
-              <div class="text-primary relative">
-                {{#each slidebox}}
-                  <article class="slide absolute top-0 transition-all duration-500 ease-in">
-                    <p class="pb-5 text-4xl font-bold">{{this.title}}</p>
-                    <p class="pb-5 text-xl">{{{this.text}}}</p>
-                  </article>
-                {{/each}}
+            <div class="flex justify-center">
+              <div class="flex place-content-between items-start pt-12 w-1140">
+                <a href="#"><img src="/img/logo.svg" class="h-20" /></a>
+                <nav>
+                  <ul id="nav-menu" class="flex pt-2">
+                    {{#each navMenu}}
+                      <li><a href={{this.link}} class="nav-link relative text-primary my-1 mx-7 text-lg">
+                          <span
+                            class="hidden after:duration-2000 after:transition-all after:ease-in after:content-[''] after:w-[calc(100%+1rem)] after:h-0.5 after:absolute after:bg-dotActive after:bottom-0 after:left-2/4 after:-translate-x-2/4"
+                          ></span>{{this.name}}</a></li>
+                    {{/each}}
+                    <a href="tel:+48534614514">
+                      <img src="img/phone.svg" class="py-0 px-4" />
+                    </a>
+                  </ul>
+                </nav>
               </div>
-          </div>
-        </section>
+            </div>
 
-        <section class="flex w-1900 h-631 justify-center bg-sectionList relative">
-            <div class="flex grow-[45] basis-0 shrink items-center bg-[url('/img/home-s2-img2.jpg')] bg-center bg-no-repeat bg-cover">
-              <h1 class="flex justify-end text-4xl text-white leading-20 font-bold w-full pr-40">
-              {{#each sectionHeader}}
-              {{this}}<br />
-              {{/each}}
-              </h1>
-            </div>
-            <div class="flex grow-[55] basis-0 shrink">
-              <ul class="flex flex-col justify-center gap-14">
-                {{#each sectionList}}
-                <li class="text-lg text-primary flex relative">
-                  <img src="/img/list-marker.svg" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2"/>
-                  <span class="w-1/2 pl-8">{{{this}}}</span>
-                </li>
-                {{/each}}
-              </ul>
-            </div>
-        </section>
-      </main>
+            <main class="flex w-full justify-center items-center flex-col">
+              <!-- hero section -->
+              <section class="flex justify-center w-1900 bg-no-repeat bg-center bg-[url('/img/home-s1-bg.jpg')]">
+                <div class="flex w-1200 h-760 p-8 relative">
+                  <div class="w-456 absolute top-56 h-1/2 overflow-hidden">
+                    <div class="dots flex gap-2"></div>
+                    <div class="text-primary relative">
+                      {{#each slidebox}}
+                        <article class="slide absolute top-0 transition-all duration-500 ease-in">
+                          <p class="pb-5 text-4xl font-bold">{{this.title}}</p>
+                          <p class="pb-5 text-xl">{{{this.text}}}</p>
+                        </article>
+                      {{/each}}
+                    </div>
+                </div>
+              </section>
+
+              <!-- section two -->
+              <section class="flex w-1900 h-663 justify-center bg-sectionList relative">
+                <div class="flex grow-[45] basis-0 shrink items-center bg-[url('/img/home-s2-img2.jpg')] bg-center bg-no-repeat bg-cover">
+                  <h1 class="flex justify-end text-4xl text-white leading-20 font-bold w-full pr-40">
+                  {{#each section2Header}}
+                  {{this}}<br />
+                  {{/each}}
+                  </h1>
+                </div>
+                <div class="flex grow-[55] basis-0 shrink">
+                  <ul class="flex flex-col justify-center gap-14">
+                    {{#each section2List}}
+                    <li class="text-lg text-primary flex relative">
+                      <img src="/img/list-marker.svg" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2"/>
+                      <span class="w-1/2 pl-8">{{{this}}}</span>
+                    </li>
+                    {{/each}}
+                  </ul>
+                </div>
+              </section>
+
+              <!-- section three -->
+              <section class="flex w-1900 h-867 justify-center bg-white">
+                <div class="flex w-1200  py-32 px-8 gap-8">
+                  <div class="w-1/2">
+                    <h2 class="font-normal text-4xl text-primary pb-8">{{{section3LeftHeader}}}</h2>
+                   <span class="font-normal text-xl text-primary pb-8">{{{section3LeftText}}}</span>
+                  </div>
+                  <div class="w-1/2  grid grid-rows-2 grid-cols-2 gap-3">
+                  {{#each section3Industries}}
+                  <div class="bg-industries flex flex-col items-center justify-center">
+                    <img src="img/{{this.img}}" />
+                    <span class="text-base text-industriesText mt-10">branża</span>
+                    <span class="text-xl text-industriesText">{{this.text}}</span>
+                  </div>
+                  {{/each}}
+                  </div>
+                </div>
+
+              </section>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+            </main>
     </script>
   </body>
 </html>
