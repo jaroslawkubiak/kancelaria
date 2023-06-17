@@ -12,6 +12,7 @@ module.exports = {
         industries: "#f0f0f0",
         industriesText: "#a8a8a8",
         sectionList: "#E5E5E5",
+        phoneSvg: "#366457",
       },
       width: {
         1140: "1140px",
@@ -39,3 +40,4 @@ module.exports = {
   },
   plugins: [],
 };
+
