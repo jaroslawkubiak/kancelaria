@@ -64,6 +64,13 @@
         main: `Tworzenie kursów przygotowujących do egzaminu na Doradcę Podatkowego oraz Biegłego Rewidenta.`,
       },
     ],
+    aboutMeSec2Header: "WYKSZTAŁCENIE",
+    aboutMeSec2List: [
+      'Wydział Prawa Uniwersytetu Warmińsko-Mazurskiego w Olsztynie.',
+      'Wydział Nauk Ekonomicznych Uniwersytetu Warmińsko-Mazurskiego w Olsztynie. <br />Studia ukończone z wyróżnieniem.',
+      'Kwalifikacje doradcy podatkowego potwierdzone egzaminem państwowym zdanym przed Państwową Komisją Egzaminacyjną do Spraw Doradztwa Podatkowego.',
+    ]
+
   };
   const template = Handlebars.compile(document.getElementById("template").innerHTML);
   const filled = template(data);
