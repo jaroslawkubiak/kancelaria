@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#002e72",
+        secondary: "#ACACAC",
         dotActive: "#d13100",
         dotNotActive: "#fff",
         dotBorder: "#bfbfbf",
@@ -13,6 +14,7 @@ module.exports = {
         industriesText: "#a8a8a8",
         sectionList: "#E5E5E5",
         phoneSvg: "#366457",
+        aboutMeListBorder: "#EBEBEB",
       },
       width: {
         1140: "1140px",
@@ -34,7 +36,8 @@ module.exports = {
         55: '55',
       },
       flex: {
-        '45': '0 0 45%'
+        '45': '0 0 45%',
+        '50': '0 0 50%',
       }
     },
   },

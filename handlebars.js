@@ -1,7 +1,7 @@
 (function fill() {
   const data = {
     navMenu: [
-      { link: "o-mnie", name: "o mnie" },
+      { link: "o-mnie.html", name: "o mnie" },
       { link: "#", name: "oferta" },
       { link: "#", name: "współpraca" },
       { link: "#", name: "kontakt" },
@@ -43,6 +43,27 @@
       "Skala doświadczenia i wiedza na najwyższym poziomie najczęściej decydują o sukcesie.",
     section4Text:
       "W trudnych sprawach prawno-podatkowych nie ma miejsca na merytoryczne pomyłki. Klienci współpracując ze mną muszą mieć pewność, że znając biegle każdy przepis, wszystkie procedury i detale dotyczące interpretacji prawnych, wykorzystam je, aby działać na ich korzyść.",
+    aboutMeHeader: "Doświadczenie",
+    aboutMeList: [
+      {
+        main: `Ponad 10 letnie doświadczenie w pracy <br />z blisko 300 klientami. ZAKRES DZIAŁAŃ:`,
+        second: [
+          '',
+          `Udzielanie porad, sporządzanie opinii i wyjaśnień z zakresu prawa podatkowego.`,
+          `Przygotowywanie zeznań i deklaracji podatkowych oraz udzielanie pomocy w tym zakresie.`,
+          `Reprezentowanie klientów w postępowaniach przed organami podatkowymi we wszystkich instancjach oraz przed Sądami Administracyjnymi, ze szczególnym uwzględnieniem tzw. spraw paliwowych`,
+        ],
+      },
+      {
+        main: `Stanowisko Prezesa Zarządu w firmie księgowo-podatkowej <a href="https://concepcion.pl/" class="underline" target="_blank">Concepcion Sp. z o.o.</a>`,
+      },
+      {
+        main: `Współpraca z klientami z kilkudziesięciu branż`,
+      },
+      {
+        main: `Tworzenie kursów przygotowujących do egzaminu na Doradcę Podatkowego oraz Biegłego Rewidenta.`,
+      },
+    ],
   };
   const template = Handlebars.compile(document.getElementById("template").innerHTML);
   const filled = template(data);
@@ -60,7 +81,7 @@ const createDots = function () {
   slides.forEach(function (_, i) {
     dotContainer.insertAdjacentHTML(
       "beforeend",
-      `<span data-slide="${i}" class="dots__dot cursor-pointer block w-16 h-4 rounded-full mb-2 border-dotBorder border hover:bg-dotActive">&nbsp;</span>`
+      `<span data-slide="${i}" class="dots__dot cursor-pointer block w-16 h-4 rounded-full mb-2 border-dotBorder hover:bg-dotActive">&nbsp;</span>`
     );
   });
 };
