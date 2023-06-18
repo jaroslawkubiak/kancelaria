@@ -48,7 +48,7 @@
       {
         main: `Ponad 10 letnie doświadczenie w pracy <br />z blisko 300 klientami. ZAKRES DZIAŁAŃ:`,
         second: [
-          '',
+          "",
           `Udzielanie porad, sporządzanie opinii i wyjaśnień z zakresu prawa podatkowego.`,
           `Przygotowywanie zeznań i deklaracji podatkowych oraz udzielanie pomocy w tym zakresie.`,
           `Reprezentowanie klientów w postępowaniach przed organami podatkowymi we wszystkich instancjach oraz przed Sądami Administracyjnymi, ze szczególnym uwzględnieniem tzw. spraw paliwowych`,
@@ -64,13 +64,25 @@
         main: `Tworzenie kursów przygotowujących do egzaminu na Doradcę Podatkowego oraz Biegłego Rewidenta.`,
       },
     ],
-    aboutMeSec2Header: "WYKSZTAŁCENIE",
+    aboutMeSec2Header: "Wykształcenie",
     aboutMeSec2List: [
-      'Wydział Prawa Uniwersytetu Warmińsko-Mazurskiego w Olsztynie.',
-      'Wydział Nauk Ekonomicznych Uniwersytetu Warmińsko-Mazurskiego w Olsztynie. <br />Studia ukończone z wyróżnieniem.',
-      'Kwalifikacje doradcy podatkowego potwierdzone egzaminem państwowym zdanym przed Państwową Komisją Egzaminacyjną do Spraw Doradztwa Podatkowego.',
-    ]
-
+      "Wydział Prawa Uniwersytetu Warmińsko-Mazurskiego w Olsztynie.",
+      "Wydział Nauk Ekonomicznych Uniwersytetu Warmińsko-Mazurskiego w Olsztynie. <br />Studia ukończone z wyróżnieniem.",
+      "Kwalifikacje doradcy podatkowego potwierdzone egzaminem państwowym zdanym przed Państwową Komisją Egzaminacyjną do Spraw Doradztwa Podatkowego.",
+    ],
+    aboutMeSec3Header: "Wartości",
+    aboutMeSec3List: [
+      {
+        img: "perfekcjonizm-ico.svg",
+        title: "Perfekcjonizm",
+        text: `W mojej pracy nie mogę pozwolić sobie na pomyłki, ponieważ ciąży na mnie ogromna odpowiedzialność. <strong>Skupiam się na rzetelności, która daje ponadprzeciętne rezultaty.</strong> Traktuję konsekwentny, bezkompromisowy i ciągły rozwój jako podstawę jakości i motywację do pracy.`,
+      },
+      {
+        img: "empatia-ico.svg",
+        title: "Empatia",
+        text: `Sam będąc przedsiębiorcą rozumiem doskonale wyzwania z jakimi mierzą się moi klienci. <strong>Potrafię udzielić wsparcia nie tylko merytorycznego, cenię również ludzki wymiar współpracy</strong>, w którym liczy się człowiek i jego indywidualna sytuacja. <strong>Często zarażam klientów humorem ponieważ z najtrudniejszej sytuacji można wyjść obronną ręką.</strong>`,
+      },
+    ],
   };
   const template = Handlebars.compile(document.getElementById("template").innerHTML);
   const filled = template(data);

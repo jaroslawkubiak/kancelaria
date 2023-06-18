@@ -15,6 +15,7 @@ module.exports = {
         sectionList: "#E5E5E5",
         phoneSvg: "#366457",
         aboutMeListBorder: "#EBEBEB",
+        aboutMeSec3Text: "#4C4C4C",
       },
       width: {
         1140: "1140px",
@@ -27,6 +28,7 @@ module.exports = {
         760: "760px",
         555: "555px",
         663: "663px",
+        650: "650px",
         446: "446px",
       },
       lineHeight: {

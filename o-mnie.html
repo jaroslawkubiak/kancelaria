@@ -70,15 +70,15 @@
         </div>
       </div>
 
-      <main class="flex w-full justify-center items-center flex-col">
+      <main class="flexjustify-center items-center flex-col  w-full ">
         <!-- hero section -->
         <section class="flex flex-col justify-center items-center w-1900">
           <h1 class="flex w-1140 py-14 text-primary text-3xl font-bold">o mnie</h1>
-          <article class="flex w-1140 py-14">
-            <div class="w-1/2">
-              <img src="img/o_mnie.jpg.webp" class="pr-14" />
+          <article class="flex w-full justify-around py-14 px-80">
+            <div class="w-1/2 justify-center flex">
+              <img src="img/o_mnie.jpg.webp"/>
             </div>
-            <div class="w-1/2">
+            <div class="w-1/2 pl-14">
               <h2 class="font-normal text-4xl text-primary pb-8 uppercase">{{aboutMeHeader}}</h2>
               <ul>
                 {{#each aboutMeList}}
@@ -114,25 +114,42 @@
           class="flex w-1900 h-446 justify-center py-20 bg-cover bg-no-repeat bg-center bg-[url('/img/about-s2-bg-aspect-ratio-1920-580.jpg.webp')]"
         >
           <div class="w-1200 flex flex-col">
-            <h2 class="text-white text-4xl pb-8">{{aboutMeSec2Header}}</h2>
+            <h2 class="text-white text-4xl pb-8 uppercase">{{aboutMeSec2Header}}</h2>
             <ul>
               {{#each aboutMeSec2List}}
                 <li class="text-white text-xl mb-8 pl-14 relative">
-                    <img
-                      src="/img/about-me-second-list-marker.svg"
-                      class="absolute left-1 top-1/2 -translate-y-1/2 w-6"
-                    />
-                    <span> {{{this}}}</span>
+                  <img
+                    src="/img/about-me-second-list-marker.svg"
+                    class="absolute left-1 top-1/2 -translate-y-1/2 w-6"
+                  />
+                  <span> {{{this}}}</span>
                 </li>
               {{/each}}
             </ul>
           </div>
         </section>
 
+        <!-- section three -->
+        <section class="flex w-1900 justify-center py-10">
+          <div class="w-1200 flex flex-col">
+            <h2 class="text-primary text-4xl pb-8 uppercase">{{aboutMeSec3Header}}</h2>
+            <ul class="flex w-full justify-between">
+              {{#each aboutMeSec3List}}
+                <li class="flex-45">
+                  <div class="h-52 mb-8">
+                    <img src="img/{{this.img}}" />
+                  </div>
+                  <h3 class="text-primary text-3xl pb-5 uppercase">{{{this.title}}}</h3>
+                  <p class="text-aboutMeSec3Text text-xl">{{{this.text}}}</p>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+        </section>
       </main>
 
       <!-- section footer bottom  -->
-      <div class="flex w-1900 justify-center bg-white">
+      <div class="flex w-1900 justify-center bg-white border-t ">
         <div class="w-1200 flex pt-5 pb-16 justify-between">
           <span class="px-7">All rights reserved</span>
           <span class="px-7">Created by
