@@ -37,20 +37,17 @@
 
     <script type="text/x-handlebars-template" id="template">
       <!-- navigation -->
-      <div class="flex justify-center bg-industries w-1900">
+      <div class="flex justify-center bg-bg_industries w-1900">
         <div class="flex place-content-between items-start pt-12 pb-14 w-1140">
           <a href="index.html"><img src="/img/logo.svg" class="h-20" /></a>
           <nav>
             <ul id="nav-menu" class="flex pt-2">
               {{#each navMenu}}
-                <li><a href={{this.link}} class="nav-link relative text-primary my-1 mx-7 text-lg">
-                    <span
-                      class="hidden after:duration-2000 after:transition-all after:ease-in after:content-[''] after:w-[calc(100%+1rem)] after:h-0.5 after:absolute after:bg-dotActive after:bottom-0 after:left-2/4 after:-translate-x-2/4"
-                    ></span>{{this.name}}</a></li>
+                {{activeNav this.name this.link}}
               {{/each}}
               <a href="tel:+48534614514">
                 <svg
-                  class="fill-phoneSvg hover:fill-dotActive"
+                  class="fill-phoneSvg hover:fill-bg_dotActive"
                   xmlns="http://www.w3.org/2000/svg"
                   width="25.2"
                   height="25.2"
@@ -70,19 +67,19 @@
         </div>
       </div>
 
-      <main class="flexjustify-center items-center flex-col  w-full ">
+      <main class="flexjustify-center items-center flex-col w-full">
         <!-- hero section -->
         <section class="flex flex-col justify-center items-center w-1900">
-          <h1 class="flex w-1140 py-14 text-primary text-3xl font-bold">o mnie</h1>
+          <h1 class="flex w-1140 py-14 text-text_primary text-3xl font-bold">o mnie</h1>
           <article class="flex w-full justify-around py-14 px-80">
             <div class="w-1/2 justify-center flex">
-              <img src="img/o_mnie.jpg.webp"/>
+              <img src="img/o_mnie.jpg.webp" />
             </div>
             <div class="w-1/2 pl-14">
-              <h2 class="font-normal text-4xl text-primary pb-8 uppercase">{{aboutMeHeader}}</h2>
+              <h2 class="font-normal text-4xl text-text_primary pb-8 uppercase">{{aboutMeHeader}}</h2>
               <ul>
                 {{#each aboutMeList}}
-                  <li class="mb-2 pl-14 text-xl text-primary relative">
+                  <li class="mb-2 pl-14 text-xl text-text_primary relative">
                     <img
                       src="/img/about-me-list-marker.svg"
                       class="absolute left-1 top-1/2 -translate-y-1/2"
@@ -93,9 +90,9 @@
                     <ol>
                       {{#each second}}
                         {{#if this}}
-                          <li class="mb-2 pl-14 text-base text-secondary relative">
+                          <li class="mb-2 pl-14 text-base text-text_secondary relative">
                             <span class="absolute w-14 h-14 left-0 top-0"><span
-                                class="flex items-center justify-center text-xl border-aboutMeListBorder border rounded-full text-primary w-9 h-9 bg-white"
+                                class="flex items-center justify-center text-xl border-aboutMeListBorder border rounded-full text-text_primary w-9 h-9 bg-white"
                               >{{@index}}</span></span>
                             <span>{{this}}</span>
                           </li>
@@ -132,30 +129,30 @@
         <!-- section three -->
         <section class="flex w-1900 justify-center py-10">
           <div class="w-1200 flex flex-col">
-            <h2 class="text-primary text-4xl pb-8 uppercase">{{aboutMeSec3Header}}</h2>
+            <h2 class="text-text_primary text-4xl pb-8 uppercase">{{aboutMeSec3Header}}</h2>
             <ul class="flex w-full justify-between">
               {{#each aboutMeSec3List}}
                 <li class="flex-45">
                   <div class="h-52 mb-8">
                     <img src="img/{{this.img}}" />
                   </div>
-                  <h3 class="text-primary text-3xl pb-5 uppercase">{{{this.title}}}</h3>
-                  <p class="text-aboutMeSec3Text text-xl">{{{this.text}}}</p>
+                  <h3 class="text-text_primary text-3xl pb-5 uppercase">{{{this.title}}}</h3>
+                  <p class="text-text_aboutMeSec3 text-xl">{{{this.text}}}</p>
                 </li>
               {{/each}}
             </ul>
           </div>
         </section>
-      </main>
 
-      <!-- section footer bottom  -->
-      <div class="flex w-1900 justify-center bg-white border-t ">
-        <div class="w-1200 flex pt-5 pb-16 justify-between">
-          <span class="px-7">All rights reserved</span>
-          <span class="px-7">Created by
-            <a href="https://polbrandmedia.eu/" target="_blank">Polbrand Media</a></span>
+        <!-- section footer bottom  -->
+        <div class="flex w-1900 justify-center bg-white border-t">
+          <div class="w-1200 flex pt-5 pb-16 justify-between">
+            <span class="px-7">All rights reserved</span>
+            <span class="px-7">Created by
+              <a href="https://polbrandmedia.eu/" target="_blank">Polbrand Media</a></span>
+          </div>
         </div>
-      </div>
+      </main>
     </script>
   </body>
 </html>

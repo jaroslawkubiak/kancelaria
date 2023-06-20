@@ -1,3 +1,19 @@
+Handlebars.registerHelper("activeNav", function (navPage, navLink) {
+  let renderedLink = `<li><a href="${navLink}" class="relative text-text_primary my-1 mx-7 text-lg transition-all w-min-content
+                  before:w-0
+                  before:h-0.5
+                  before:absolute
+                  before:bottom-0
+                  before:transition-all
+                  before:duration-500
+                  before:-left-2
+                  before:bg-bg_dotActive
+                  hover:before:w-[calc(100%+1rem)]
+                  ">
+                    ${navPage}</a></li>`;
+  return new Handlebars.SafeString(renderedLink);
+});
+
 (function fill() {
   const data = {
     navMenu: [
@@ -90,64 +106,72 @@
 })();
 
 /////////////////////////////////////////////////////
+// mobile menu
+const mobMenuBtn = document.getElementById("mobile-menu-btn");
+const mobLogo = document.getElementById("mob-logo");
+const mobMenu = document.getElementById("mobile-menu");
+mobMenuBtn.addEventListener("click", () => {
+  console.log(mobMenu);
+  mobMenu.classList.toggle("-translate-y-[120%]");
+  mobMenu.classList.toggle("translate-y-0");
+
+  // switching logo to white
+  // mobLogo.src = "/img/logo-white.svg";
+});
+
+/////////////////////////////////////////////////////
 //slider effect
 const slides = document.querySelectorAll(".slide");
 const dotContainer = document.querySelector(".dots");
 let curSlide = 0;
 const maxSlide = slides.length;
-// creating "dots"
-const createDots = function () {
-  slides.forEach(function (_, i) {
-    dotContainer.insertAdjacentHTML(
-      "beforeend",
-      `<span data-slide="${i}" class="dots__dot cursor-pointer block w-16 h-4 rounded-full mb-2 border-dotBorder hover:bg-dotActive">&nbsp;</span>`
-    );
+
+// if maxSlide is empty - don't do anything. This work's only in index.html
+if (maxSlide) {
+  // creating "dots"
+  const createDots = function () {
+    slides.forEach(function (_, i) {
+      dotContainer.insertAdjacentHTML(
+        "beforeend",
+        `<span data-slide="${i}" class="dots__dot cursor-pointer block w-12 h-2 md:w-16 md:h-4 rounded-full mb-2 border border-dotBorder hover:bg-bg_dotActive">&nbsp;</span>`
+      );
+    });
+  };
+
+  //change slide
+  const changeSlide = function () {
+    curSlide === maxSlide - 1 ? (curSlide = 0) : curSlide++;
+    goToSlide(curSlide);
+    activeDot(curSlide);
+  };
+
+  // changing slide after 5s
+  // setInterval(changeSlide, 5000);
+
+  // selecting active dot
+  const activeDot = function (slide) {
+    document.querySelectorAll(".dots__dot").forEach(dot => dot.classList.remove("bg-bg_dotActive"));
+    document.querySelector(`.dots__dot[data-slide="${slide}"]`).classList.add("bg-bg_dotActive");
+  };
+
+  // changing slides
+  const goToSlide = function (slide) {
+    slides.forEach((s, i) => (s.style.transform = `translateX(${120 * (i - slide)}%)`));
+  };
+  // init for dots
+  const init = function () {
+    createDots();
+    goToSlide(0);
+    activeDot(0);
+  };
+  init();
+
+  // event listener for dots
+  dotContainer.addEventListener("click", function (e) {
+    if (e.target.classList.contains("dots__dot")) {
+      const { slide } = e.target.dataset;
+      goToSlide(slide);
+      activeDot(slide);
+    }
   });
-};
-
-//change slide
-const changeSlide = function () {
-  curSlide === maxSlide - 1 ? (curSlide = 0) : curSlide++;
-  goToSlide(curSlide);
-  activeDot(curSlide);
-};
-
-// changing slide after 5s
-setInterval(changeSlide, 5000);
-
-// selecting active dot
-const activeDot = function (slide) {
-  document.querySelectorAll(".dots__dot").forEach(dot => dot.classList.remove("bg-dotActive"));
-  document.querySelector(`.dots__dot[data-slide="${slide}"]`).classList.add("bg-dotActive");
-};
-
-// changing slides
-const goToSlide = function (slide) {
-  slides.forEach((s, i) => (s.style.transform = `translateX(${120 * (i - slide)}%)`));
-};
-// init for dots
-const init = function () {
-  createDots();
-  goToSlide(0);
-  activeDot(0);
-};
-init();
-
-// event listener for dots
-dotContainer.addEventListener("click", function (e) {
-  if (e.target.classList.contains("dots__dot")) {
-    const { slide } = e.target.dataset;
-    goToSlide(slide);
-    activeDot(slide);
-  }
-});
-
-// handling underline on menu links
-const nav = document.getElementById("nav-menu");
-const hendleHover = function (e) {
-  if (e.target.classList.contains("nav-link")) {
-    const link = e.target.children[0].classList.toggle("hidden");
-  }
-};
-nav.addEventListener("mouseover", hendleHover);
-nav.addEventListener("mouseout", hendleHover);
+}
