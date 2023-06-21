@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mariusz Przyborowski</title>
+    <title>O mnie - Mariusz Przyborowski</title>
     <link rel="canonical" href="https://kancelariaprzyborowski.pl/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
       let link = document.createElement("link");
       link.rel = "stylesheet";
       link.type = "text/css";
-      link.href = `/dist/output.css?v=${fileVer}`;
+      link.href = `style.css?v=${fileVer}`;
       head.appendChild(link);
     </script>
 
@@ -43,7 +43,7 @@
         class="-translate-y-[120%] delay-300 absolute top-0 left-0 right-0 bg-phoneSvg h-auto px-5 pb-12 z-10 transition-all"
       >
         <div class="flex justify-between py-5">
-          <a href="index.html"><img src="/img/logo-white.svg" class="h-12" alt="Logo" /></a>
+          <a href="index.html"><img src="img/logo-white.svg" class="h-12" alt="Logo" /></a>
         </div>
         <nav>
           <ul id="nav-menu" class="flex flex-col py-6">
@@ -86,7 +86,7 @@
 
       <!-- mobile menu button -->
       <div class="flex md:hidden justify-between p-5">
-        <a href="index.html"><img src="/img/logo.svg" class="h-12" alt="Logo" /></a>
+        <a href="index.html"><img src="img/logo.svg" class="h-12" alt="Logo" /></a>
         <button
           id="mobile-menu-btn"
           class="group w-14 h-14 bg-phoneSvg rounded-full z-20 relative overflow-hidden"
@@ -108,7 +108,7 @@
       <!-- desktop menu -->
       <div class="flex mx-auto bg-bg_industries w-1900">
         <div class="hidden md:flex place-content-between mx-auto items-start pt-12 pb-10 w-1140">
-          <a href="index.html"><img src="/img/logo.svg" class="h-20" alt="Logo" /></a>
+          <a href="index.html"><img src="img/logo.svg" class="h-20" alt="Logo" /></a>
           <nav>
             <ul id="nav-menu" class="flex pt-2">
               {{#each navMenu}}
@@ -158,7 +158,7 @@
                 {{#each aboutMeList}}
                   <li class="mb-2 pl-14 text-[15px] md:text-xl text-text_primary relative">
                     <img
-                      src="/img/about-me-list-marker.svg"
+                      src="img/about-me-list-marker.svg"
                       class="absolute left-1 top-1/2 -translate-y-1/2"
                       alt="ico"
                     />
@@ -186,7 +186,7 @@
 
         <!-- section two -->
         <section
-          class="flex w-full md:w-1900 md:h-446 justify-center py-12 md:py-20 bg-cover bg-no-repeat bg-center bg-[url('/img/about-s2-bg-aspect-ratio-1920-580.jpg.webp')]"
+          class="flex w-full md:w-1900 md:h-446 justify-center py-12 md:py-20 bg-cover bg-no-repeat bg-center bg-[url('img/about-s2-bg-aspect-ratio-1920-580.jpg.webp')]"
         >
           <div class="w-full md:w-1200 flex flex-col px-5">
             <h2
@@ -196,7 +196,7 @@
               {{#each aboutMeSec2List}}
                 <li class="text-white text-[15px] md:text-xl mb-8 pl-14 relative">
                   <img
-                    src="/img/about-me-second-list-marker.svg"
+                    src="img/about-me-second-list-marker.svg"
                     class="absolute left-1 top-1/2 -translate-y-1/2 w-6"
                     alt="ico"
                   />
