@@ -108,15 +108,48 @@ Handlebars.registerHelper("activeNav", function (navPage, navLink) {
 /////////////////////////////////////////////////////
 // mobile menu
 const mobMenuBtn = document.getElementById("mobile-menu-btn");
-const mobLogo = document.getElementById("mob-logo");
 const mobMenu = document.getElementById("mobile-menu");
 mobMenuBtn.addEventListener("click", () => {
-  console.log(mobMenu);
   mobMenu.classList.toggle("-translate-y-[120%]");
   mobMenu.classList.toggle("translate-y-0");
 
-  // switching logo to white
-  // mobLogo.src = "/img/logo-white.svg";
+  //changing menu btn style
+  const menuBtnStyle = mobMenuBtn.children;
+
+  // if class translate-y-0 is in element - menu is open
+  const mobileMenuState = mobMenu.classList.contains("translate-y-0");
+  if (mobileMenuState) {
+    // menu is open
+    menuBtnStyle[0].classList.remove("-translate-y-3");
+    menuBtnStyle[0].classList.add("-translate-y-1/2");
+    menuBtnStyle[2].classList.remove("translate-y-2");
+    menuBtnStyle[2].classList.add("-translate-y-1/2");
+    menuBtnStyle[1].classList.remove("-translate-x-1/2");
+
+    menuBtnStyle[1].classList.remove("-translate-x-1/2");
+    menuBtnStyle[1].classList.add("-translate-x-[250%]");
+
+    setTimeout(() => {
+      menuBtnStyle[0].classList.toggle("rotate-45");
+      menuBtnStyle[2].classList.toggle("-rotate-45");
+    }, 300);
+  } else {
+    // menu is closed
+    menuBtnStyle[1].classList.remove("-translate-x-[250%]");
+    menuBtnStyle[1].classList.add("-translate-x-1/2");
+    menuBtnStyle[0].classList.toggle("rotate-45");
+    menuBtnStyle[2].classList.toggle("-rotate-45");
+
+    setTimeout(() => {
+      menuBtnStyle[0].classList.remove("-translate-y-1/2");
+      menuBtnStyle[0].classList.add("-translate-y-3");
+      menuBtnStyle[2].classList.remove("-translate-y-1/2");
+      menuBtnStyle[2].classList.add("translate-y-2");
+    }, 300);
+  }
+  // adding hover effect when menu is open
+  menuBtnStyle[0].classList.toggle("group-hover:bg-bg_mobileMenuHover");
+  menuBtnStyle[2].classList.toggle("group-hover:bg-bg_mobileMenuHover");
 });
 
 /////////////////////////////////////////////////////
@@ -146,7 +179,7 @@ if (maxSlide) {
   };
 
   // changing slide after 5s
-  // setInterval(changeSlide, 5000);
+  setInterval(changeSlide, 5000);
 
   // selecting active dot
   const activeDot = function (slide) {

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -32,21 +32,20 @@
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
   </head>
-  <body class="box-border p-0 m-0">
+  <body class="box-border p-0 m-0 mx-auto">
     <div id="output"></div>
 
     <script type="text/x-handlebars-template" id="template">
       <!-- navigation -->
-
       <!-- mobile menu - open -->
       <div
         id="mobile-menu"
         class="-translate-y-[120%] delay-300 absolute top-0 left-0 right-0 bg-phoneSvg h-auto px-5 pb-12 z-10 transition-all"
       >
         <div class="flex justify-between py-5">
-          <a href="index.html"><img src="/img/logo-white.svg" class="h-12" /></a>
+          <a href="index.html"><img src="/img/logo-white.svg" class="h-12" alt="Logo"/></a>
         </div>
-        <nav>
+        <nav aria-label="Menu">
           <ul id="nav-menu" class="flex flex-col py-6">
             {{#each navMenu}}
               <li class="py-4"><a
@@ -85,23 +84,31 @@
         ></div>
       </div>
 
-      <!-- mobile menu - closeed -->
-      <div class="flex justify-between pt-5 px-5">
-        <a href="index.html"><img src="/img/logo.svg" class="h-12" /></a>
+      <!-- mobile menu button -->
+      <div class="flex md:hidden justify-between pt-5 px-5">
+        <a href="index.html"><img src="/img/logo.svg" class="h-12"  alt="Logo"/></a>
         <button
           id="mobile-menu-btn"
-          class="flex flex-col gap-1.5 items-center justify-center w-14 h-14 bg-phoneSvg rounded-full z-20"
+          class="group w-14 h-14 bg-phoneSvg rounded-full z-20 relative overflow-hidden"
+          aria-controls="menu"
+          aria-label="Navigation"
         >
-          <span class="h-1 w-8 bg-white rounded-lg"></span>
-          <span class="h-1 w-8 bg-white rounded-lg"></span>
-          <span class="h-1 w-8 bg-white rounded-lg"></span>
+          <span
+            class="absolute -translate-y-3 -translate-x-1/2 left-1/2 top-1/2 h-1 w-8 bg-white transition-all ease-linear duration-300 rounded-lg"
+          ></span>
+          <span
+            class="absolute -translate-y-1/2 -translate-x-1/2 left-1/2 top-1/2 h-1 w-8 bg-white transition-all ease-linear duration-100 rounded-lg"
+          ></span>
+          <span
+            class="absolute translate-y-2 -translate-x-1/2 left-1/2 top-1/2 h-1 w-8 bg-white transition-all ease-linear duration-300 rounded-lg"
+          ></span>
         </button>
       </div>
 
       <!-- desktop menu -->
-      <div class="hidden md:flex place-content-between items-start pt-12 w-1140">
-        <a href="index.html"><img src="/img/logo.svg" class="h-20" /></a>
-        <nav>
+      <div class="hidden md:flex place-content-between m-auto items-start pt-12 w-1140">
+        <a href="index.html"><img src="/img/logo.svg" class="h-20"  alt="Logo"/></a>
+        <nav aria-label="Menu">
           <ul id="nav-menu" class="flex pt-2">
             {{#each navMenu}}
               {{activeNav this.name this.link}}
@@ -130,12 +137,12 @@
       <main class="flex w-full justify-center items-center flex-col m-auto">
         <!-- hero section   -->
         <section
-          class="flex justify-center flex-col w-full h-full md:bg-cover md:bg-no-repeat md:bg-center md:bg-[url('/img/home-s1-bg.jpg')] md:w-1900 md:h-555 md:py-20 md:flex-row"
+          class="flex justify-center flex-col w-full h-full md:bg-cover md:bg-no-repeat md:bg-center md:bg-[url('/img/home-s1-bg.jpg')] md:w-1900 md:h-[690px] md:py-20 md:flex-row"
         >
           <img src="/img/home-s1-bg-mobile.jpg" class="w-full h-full md:hidden" />
           <div class="md:w-1200 flex">
             <div
-              class="h-64 w-full py-10 px-5 md:flex-45 md:w-456 md:h-96 md:absolute overflow-hidden"
+              class="h-64 w-full py-10 px-8 md:flex-45 md:w-456 md:h-96 md:absolute overflow-hidden"
             >
               <div class="dots flex gap-2"></div>
               <div class="text-text_primary relative">

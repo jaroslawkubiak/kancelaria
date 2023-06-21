@@ -13,8 +13,9 @@ module.exports = {
         bg_industries: "#f0f0f0",
         bg_section4: "#004b85",
         bg_dotActive: "#d13100",
+        bg_mobileMenuHover: "#e3e3e3",
         dotBorder: "#bfbfbf",
-        phoneSvg: "#366457",
+        phoneSvg: "#356356",
         aboutMeListBorder: "#EBEBEB",
       },
       width: {
