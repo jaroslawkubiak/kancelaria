@@ -182,7 +182,7 @@ if (maxSlide) {
   };
 
   // changing slide after 5s
-  // setInterval(changeSlide, 5000);
+  setInterval(changeSlide, 5000);
 
   // selecting active dot
   const activeDot = function (slide) {
@@ -211,4 +211,3 @@ if (maxSlide) {
     }
   });
 }
-
