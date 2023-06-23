@@ -43,7 +43,7 @@
         class="-translate-y-[120%] delay-300 absolute top-0 left-0 right-0 bg-phoneSvg h-auto px-5 pb-12 z-10 transition-all"
       >
         <div class="flex justify-between py-5">
-          <a href="index.html"><img src="img/logo-white.svg" class="h-12" alt="Logo"/></a>
+          <a href="index.html"><img src="img/logo-white.svg" class="h-[50px]" alt="Logo" /></a>
         </div>
         <nav aria-label="Menu">
           <ul id="nav-menu" class="flex flex-col py-6">
@@ -80,13 +80,14 @@
           </div>
         </nav>
         <div
-          class="-z-10 absolute -bottom-12 -left-8 -right-8 bg-phoneSvg h-48 rounded-[40%]"
+          id="mobile-menu-bottom"
+          class="hidden -z-10 absolute -bottom-16 -left-16 -right-16 bg-phoneSvg  h-48 rounded-[100%]"
         ></div>
       </div>
 
       <!-- mobile menu button -->
-      <div class="flex md:hidden justify-between pt-5 px-5">
-        <a href="index.html"><img src="img/logo.svg" class="h-12"  alt="Logo"/></a>
+      <div class="flex w-full md:hidden justify-between pt-5 px-5">
+        <a href="index.html"><img src="img/logo.svg" class="h-12" alt="Logo" /></a>
         <button
           id="mobile-menu-btn"
           class="group w-14 h-14 bg-phoneSvg rounded-full z-20 relative overflow-hidden"
@@ -106,19 +107,21 @@
       </div>
 
       <!-- desktop menu -->
-      <div class="hidden md:flex place-content-between m-auto items-start pt-12 w-1140">
-        <a href="index.html"><img src="img/logo.svg" class="h-20"  alt="Logo"/></a>
+      <div
+        class="hidden max-w-[1200px] place-content-between mx-auto items-center xl:items-start pt-5 px-8 md:flex xl:pt-12 lg:pt-10"
+      >
+        <a href="index.html"><img src="img/logo.svg" class="h-[50px] xl:h-20" alt="Logo" /></a>
         <nav aria-label="Menu">
-          <ul id="nav-menu" class="flex pt-2">
+          <ul id="nav-menu" class="flex xl:py-2">
             {{#each navMenu}}
               {{activeNav this.name this.link}}
             {{/each}}
-            <a href="tel:+48534614514">
+            <a href="tel:+48534614514" class="pl-6">
               <svg
                 class="fill-phoneSvg hover:fill-bg_dotActive"
                 xmlns="http://www.w3.org/2000/svg"
-                width="25.2"
-                height="25.2"
+                width="20"
+                height="20"
                 viewBox="0 0 25.2 25.2"
               >
                 <circle cx="2" cy="2" r="2" transform="translate(7 15.1)" opacity="0"></circle>
@@ -134,22 +137,24 @@
         </nav>
       </div>
 
-      <main class="flex w-full justify-center items-center flex-col m-auto">
+      <main>
         <!-- hero section   -->
         <section
-          class="flex justify-center flex-col w-full h-full md:bg-cover md:bg-no-repeat md:bg-center md:bg-[url('img/home-s1-bg.jpg')] md:w-1900 md:h-[690px] md:py-20 md:flex-row"
+          class="flex flex-col md:bg-cover md:bg-no-repeat md:bg-center md:bg-[url('img/home-s1-bg.jpg')] md:h-[69vw] xl:h-[47rem] xl:w-full xl:max-w-[1900px] xl:mx-auto"
         >
           <img src="img/home-s1-bg-mobile.jpg" class="w-full h-full md:hidden" />
-          <div class="md:w-1200 flex">
-            <div
-              class="h-64 w-full py-10 px-8 md:flex-45 md:w-456 md:h-96 md:absolute overflow-hidden"
-            >
-              <div class="dots flex gap-2"></div>
+          <div
+            class="px-5 md:w-1/2 lg:w-[40%] xl:w-full xl:max-w-[1200px] xl:mx-auto xl:h-full xl:px-8"
+          >
+            <div class="py-12 mt-6 h-80 md:mt-8 overflow-hidden lg:h-96 lg:mt-20 xl:w-1/3 xl:mt-32">
+              <div class="dots flex gap-2 pb-2"></div>
               <div class="text-text_primary relative">
                 {{#each slidebox}}
                   <article class="slide absolute top-0 transition-all duration-500 ease-in">
-                    <p class="pb-5 md:text-4xl font-bold text-xl">{{this.title}}</p>
-                    <p class="pb-5 md:text-xl text-base">{{{this.text}}}</p>
+                    <p
+                      class="text-[25px] font-bold pb-5 lg:text-[30px] xl:text-[39px]"
+                    >{{this.title}}</p>
+                    <p class="pb-5 lg:text-[18px] xl:text-[21px]">{{{this.text}}}</p>
                   </article>
                 {{/each}}
               </div>
@@ -158,31 +163,27 @@
         </section>
 
         <!-- section two -->
-
         <section
-          class="flex flex-col md:flex-row justify-center bg-bg_sectionList md:w-1900 md:h-663"
+          class="flex flex-col w-full bg-bg_sectionList md:flex-row md:justify-center xl:max-w-[1900px] xl:mx-auto"
         >
-          <div
-            class="flex h-full items-center bg-[url('img/home-s2-img2.jpg')] bg-center bg-no-repeat bg-cover md:grow-[45] md:basis-0 md:shrink"
-          >
+          <div class="bg-[url('img/home-s2-img2.jpg')] bg-center bg-no-repeat bg-cover md:w-[45%] 2xl:justify-end 2xl:flex">
             <h1
-              class="flex justify-start text-3xl z-10 text-white font-bold w-full py-14 px-8 md:text-4xl md:pr-40 md:justify-end md:leading-20"
+              class="text-[30px] py-14 px-8 z-10 text-white font-bold lg:text-[35px] xl:text-[39px] xl:pl-32 xl:py-40  2xl:w-1/2 2xl:p-0 2xl:pr-32 2xl:my-auto"
             >
               {{#each section2Header}}
                 {{this}}<br />
               {{/each}}
             </h1>
           </div>
-
-          <div class="flex py-12 pr-8 md:w-auto md:grow-[55] md:basis-0 md:shrink">
-            <ul class="flex flex-col justify-center md:gap-14">
+          <div class="flex w-full py-12 pr-8 md:w-[55%] xl:py-32 xl:pr-32">
+            <ul class="flex flex-col justify-center md:gap-8">
               {{#each section2List}}
-                <li class="mb-8 text-base md:text-lg text-text_primary flex relative">
+                <li class="flex relative mb-6 text-sm text-text_primary xl:text-lg">
                   <img
                     src="img/list-marker.svg"
                     class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2"
                   />
-                  <span class="md:w-1/2 pl-8">{{{this}}}</span>
+                  <span class="pl-8">{{{this}}}</span>
                 </li>
               {{/each}}
             </ul>
@@ -190,68 +191,73 @@
         </section>
 
         <!-- section three  -->
-        <section class="flex justify-center bg-white md:w-1900 md:h-867">
-          <div class="flex flex-col py-10 px-5 md:flex-row md:w-1200 md:py-32 md:px-8 md:gap-8">
-            <div class="w-full md:w-1/2 pb-8">
+        <section class="flex justify-center bg-white">
+          <div
+            class="flex flex-col py-10 px-5 md:px-8 md:py-14 lg:flex-row lg:py-20 lg:px-8 xl:max-w-[1200px] xl:mx-auto xl:px-8 xl:py-32"
+          >
+            <div class="w-full lg:pr-10">
               <h2
-                class="leading-tight text-2xl font-normal text-text_primary pb-8 md:text-4xl"
+                class="leading-tight text-[25px] font-normal text-text_primary pb-8 md:text-[30px] lg:text-[35px] xl:text-[39px]"
               >{{{section3LeftHeader}}}</h2>
               <span
-                class="leading-3 text-base font-normal text-text_primary md:text-xl"
+                class="leading-3 text-[15px] font-normal text-text_primary pb-8 md:text-base lg:text-lg xl:text-xl"
               >{{{section3LeftText}}}</span>
             </div>
-            <div
-              class="w-full md:w-1/2 grid grid-rows-2 grid-cols-2 gap-2 box-border aspect-square"
-            >
+            <div class="w-full grid grid-cols-2 gap-2 xl:gap-3">
               {{#each section3Industries}}
-                <div class="bg-bg_industries flex flex-col items-center justify-center">
-                  <img src="img/{{this.img}}" class="w-12 h-12" />
+                <div
+                  class="bg-bg_industries flex flex-col items-center justify-center aspect-square"
+                >
+                  <img src="img/{{this.img}}" class="w-12 md:w-32 lg:w-20 xl:w-24" />
                   <span
-                    class="text-xs md:text-base text-text_industries mt-3 md:mt-10"
+                    class="text-[12px] text-text_industries mt-3 md:text-[15px] md:mt-10"
                   >branża</span>
-                  <span class="text-base md:text-xl text-text_industries">{{this.text}}</span>
+                  <span class="text-[17px] text-text_industries md:text-[21px]">{{this.text}}</span>
                 </div>
               {{/each}}
             </div>
           </div>
         </section>
 
-        <!-- section four   -->
+        <!-- section four  -->
         <section
-          class="flex justify-center flex-col w-full h-full md:flex-row md:bg-cover md:bg-no-repeat md:bg-center md:bg-[url('img/home-s4-bg.jpg')] md:w-1900 md:h-555 md:py-20"
+          class="flex justify-center flex-col md:flex-row md:bg-cover md:bg-no-repeat md:bg-center md:bg-[url('img/home-s4-bg.jpg')] xl:max-w-[1900px] xl:mx-auto"
         >
           <img src="img/home-s4-bg-mobile.jpg" class="w-full h-full md:hidden" />
-          <div class="flex md:justify-end md:w-1200">
-            <div class="h-full bg-bg_section4 w-full md:flex-45 py-10 px-5 md:bg-transparent">
+          <div class="flex md:justify-end md:w-full md:px-8 md:py-14 lg:py-20 xl:max-w-[1200px]">
+            <div
+              class="w-full h-full bg-bg_section4 px-5 py-10 md:p-0 md:bg-transparent md:flex-45"
+            >
               <h2
-                class="leading-6 font-normal text-2xl md:text-4xl text-white pb-5 md:pb-8"
+                class="leading-6 font-normal text-2xl text-white pb-5 lg:text-[35px] lg:leading-10 lg:pb-8"
               >{{{section4Header}}}</h2>
-              <p class="leading-5 text-base md:text-xl text-white pb-5 md:pb-8">{{section4Text}}</p>
+              <p class="leading-5 text-base text-white pb-5 lg:text-lg lg:pb-8">{{section4Text}}</p>
             </div>
           </div>
         </section>
 
         <!-- section footer   -->
-        <footer class="hidden md:flex md:w-1900 md:justify-center md:bg-bg_industries">
-          <div class="w-1200 flex py-14 justify-end">
-            <ul id="nav-menu" class="flex pt-2">
+        <footer
+          class="hidden mx-auto md:flex w-full  md:justify-center md:bg-bg_footer  xl:max-w-[1900px] xl:mx-auto"
+        >
+          <div class="flex w-full px-8 py-10 items-center justify-between xl:py-14 xl:max-w-[1200px] xl:mx-auto">
+            <a href="index.html"><img src="img/logo.svg" class="h-[60px] xl:hidden" alt="Logo" /></a>
+            <ul id="nav-menu" class="flex">
               {{#each navMenu}}
-                <li><a
+                <li class=""><a
                     href={{this.link}}
-                    class="nav-link relative text-text_primary my-1 mx-7 text-lg"
+                    class="nav-link  text-text_primary text-base pl-12 xl:text-[19px]  xl:pl-16 hover:text-text_footerLinkHover"
                   >
-                    <span
-                      class="hidden after:duration-2000 after:transition-all after:ease-in after:content-[''] after:w-[calc(100%+1rem)] after:h-0.5 after:absolute after:bg-bg_dotActive after:bottom-0 after:left-2/4 after:-translate-x-2/4"
-                    ></span>{{this.name}}</a></li>
+                    {{this.name}}</a></li>
               {{/each}}
             </ul>
           </div>
         </footer>
         <!-- section footer bottom  -->
-        <div class="flex w-full md:w-1900 justify-center bg-white">
-          <div class="flex-col md:flex-row w-full md:w-1200 flex pt-5 pb-16 justify-between">
-            <span class="text-sm md:text-base px-7">All rights reserved</span>
-            <span class="text-sm md:text-base px-7">Created by
+        <div class="flex w-full justify-center bg-white">
+          <div class="flex flex-col w-full justify-between pt-5 pb-16 md:flex-row  lg:max-w-[1200px] lg:mx-auto">
+            <span class="text-sm md:text-base px-5 md:px-8">All rights reserved</span>
+            <span class="text-sm md:text-base px-5 md:px-8">Created by
               <a href="https://polbrandmedia.eu/" target="_blank">Polbrand Media</a></span>
           </div>
         </div>

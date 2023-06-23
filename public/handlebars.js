@@ -1,14 +1,15 @@
 Handlebars.registerHelper("activeNav", function (navPage, navLink) {
-  let renderedLink = `<li><a href="${navLink}" class="relative text-text_primary my-1 mx-7 text-lg transition-all w-min-content
+  let renderedLink = `<li><a href="${navLink}" class="relative text-text_primary mx-[16px] my-1 
+  text-sm lg:text-base lg:mx-[24px] xl:mx-[27px] xl:text-lg transition-all w-min-content
                   before:w-0
                   before:h-0.5
                   before:absolute
-                  before:bottom-0
+                  before:-bottom-2
                   before:transition-all
                   before:duration-500
-                  before:-left-2
+                  before:-left-1
                   before:bg-bg_dotActive
-                  hover:before:w-[calc(100%+1rem)]
+                  hover:before:w-[calc(100%+8px)]
                   ">
                     ${navPage}</a></li>`;
   return new Handlebars.SafeString(renderedLink);
@@ -110,6 +111,8 @@ Handlebars.registerHelper("activeNav", function (navPage, navLink) {
 const mobMenuBtn = document.getElementById("mobile-menu-btn");
 const mobMenu = document.getElementById("mobile-menu");
 mobMenuBtn.addEventListener("click", () => {
+  document.getElementById("mobile-menu-bottom").classList.remove("hidden");
+
   mobMenu.classList.toggle("-translate-y-[120%]");
   mobMenu.classList.toggle("translate-y-0");
 
@@ -166,7 +169,7 @@ if (maxSlide) {
     slides.forEach(function (_, i) {
       dotContainer.insertAdjacentHTML(
         "beforeend",
-        `<span data-slide="${i}" class="dots__dot cursor-pointer block w-12 h-2 md:w-16 md:h-4 rounded-full mb-2 border border-dotBorder hover:bg-bg_dotActive">&nbsp;</span>`
+        `<span data-slide="${i}" class="dots__dot cursor-pointer block w-12 h-2 lg:w-14 lg:h-3 rounded-full mb-2 border border-dotBorder hover:bg-bg_dotActive">&nbsp;</span>`
       );
     });
   };
@@ -179,7 +182,7 @@ if (maxSlide) {
   };
 
   // changing slide after 5s
-  setInterval(changeSlide, 5000);
+  // setInterval(changeSlide, 5000);
 
   // selecting active dot
   const activeDot = function (slide) {
@@ -208,3 +211,4 @@ if (maxSlide) {
     }
   });
 }
+

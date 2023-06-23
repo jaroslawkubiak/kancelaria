@@ -43,9 +43,9 @@
         class="-translate-y-[120%] delay-300 absolute top-0 left-0 right-0 bg-phoneSvg h-auto px-5 pb-12 z-10 transition-all"
       >
         <div class="flex justify-between py-5">
-          <a href="index.html"><img src="img/logo-white.svg" class="h-12" alt="Logo" /></a>
+          <a href="index.html"><img src="img/logo-white.svg" class="h-[50px]" alt="Logo" /></a>
         </div>
-        <nav>
+        <nav aria-label="Menu">
           <ul id="nav-menu" class="flex flex-col py-6">
             {{#each navMenu}}
               <li class="py-4"><a
@@ -80,12 +80,13 @@
           </div>
         </nav>
         <div
-          class="-z-10 absolute -bottom-12 -left-8 -right-8 bg-phoneSvg h-48 rounded-[40%]"
+          id="mobile-menu-bottom"
+          class="hidden -z-10 absolute -bottom-16 -left-16 -right-16 bg-phoneSvg h-48 rounded-[100%]"
         ></div>
       </div>
 
       <!-- mobile menu button -->
-      <div class="flex md:hidden justify-between p-5">
+      <div class="flex w-full md:hidden justify-between pt-5 px-5">
         <a href="index.html"><img src="img/logo.svg" class="h-12" alt="Logo" /></a>
         <button
           id="mobile-menu-btn"
@@ -106,20 +107,26 @@
       </div>
 
       <!-- desktop menu -->
-      <div class="flex mx-auto bg-bg_industries w-1900">
-        <div class="hidden md:flex place-content-between mx-auto items-start pt-12 pb-10 w-1140">
-          <a href="index.html"><img src="img/logo.svg" class="h-20" alt="Logo" /></a>
-          <nav>
-            <ul id="nav-menu" class="flex pt-2">
+      <div class="max-w-[1900px] bg-bg_industries mx-auto w-full">
+        <div
+          class="hidden max-w-[1200px] place-content-between mx-auto items-center pt-5 px-8 md:flex md:px-8 md:py-5 lg:pt-10 lg:px-8 lg:pb-8 xl:items-start xl:pt-12"
+        >
+          <a href="index.html"><img
+              src="img/logo.svg"
+              class="h-[50px] lg:h-[60px] xl:h-20"
+              alt="Logo"
+            /></a>
+          <nav aria-label="Menu">
+            <ul id="nav-menu" class="flex xl:py-2">
               {{#each navMenu}}
                 {{activeNav this.name this.link}}
               {{/each}}
-              <a href="tel:+48534614514">
+              <a href="tel:+48534614514" class="pl-6">
                 <svg
                   class="fill-phoneSvg hover:fill-bg_dotActive"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="25.2"
-                  height="25.2"
+                  width="20"
+                  height="20"
                   viewBox="0 0 25.2 25.2"
                 >
                   <circle cx="2" cy="2" r="2" transform="translate(7 15.1)" opacity="0"></circle>
@@ -136,30 +143,30 @@
         </div>
       </div>
 
-      <main class="flex w-full justify-center items-center flex-col m-auto">
+      <main class="flex w-full justify-center items-center flex-col mx-auto">
         <!-- hero section -->
-        <section class="flex flex-col justify-center items-center px-5 w-full md:w-1900">
+        <section class="flex flex-col justify-center items-center w-full ">
           <h1
-            class="flex w-full py-5 md:w-1140 md:py-14 text-text_primary md:text-3xl font-semibold text-xl"
+            class="flex w-full text-text_primary font-semibold text-xl p-5 md:text-[30px] md:py-10 md:px-8 lg:py-12 xl:py-14 xl:max-w-[1200px]"
           >o mnie</h1>
           <article
-            class="flex md:justify-around justify-center md:py-14 md:px-80 flex-col md:flex-row"
+            class="flex justify-center flex-col px-5 md:flex-row md:py-10 xl:max-w-[1300px] xl:px-8"
           >
-            <div class="md:w-1/2 w-full justify-center flex">
+            <div class="w-full justify-center flex">
               <figure>
-                <img src="img/o_mnie.jpg.webp" class="w-auto h-auto" alt="Moje zdjęcie" />
+                <img src="img/o_mnie.jpg.webp" class="w-auto h-auto pr-14" alt="Moje zdjęcie" />
               </figure>
             </div>
-            <div class="w-full md:w-1/2 md:pl-14">
+            <div class="w-full">
               <h2
-                class="font-normal text-[25px] md:text-4xl text-text_primary pb-5 md:pb-8 uppercase"
+                class="font-normal text-[25px] text-text_primary uppercase pb-5 md:text-[30px] lg:text-[39px] lg:pb-8 xl:pb-8"
               >{{aboutMeHeader}}</h2>
               <ul>
                 {{#each aboutMeList}}
-                  <li class="mb-2 pl-14 text-[15px] md:text-xl text-text_primary relative">
+                  <li class="text-[15px] text-text_primary relative pl-[60px] mb-[10px] lg:text-lg">
                     <img
                       src="img/about-me-list-marker.svg"
-                      class="absolute left-1 top-1/2 -translate-y-1/2"
+                      class="absolute left-1 top-4"
                       alt="ico"
                     />
                     <span> {{{this.main}}}</span>
@@ -168,11 +175,13 @@
                     <ol>
                       {{#each second}}
                         {{#if this}}
-                          <li class="mb-2 pl-14 text-base text-text_secondary relative">
+                          <li class="mb-2 pl-[60px] relative">
                             <span class="absolute w-14 h-14 left-0 top-0"><span
-                                class="flex items-center justify-center text-[14px] md:text-xl border-aboutMeListBorder border rounded-full text-text_primary w-9 h-9 bg-white"
+                                class="flex items-center justify-center text-[14px] border-aboutMeListBorder border rounded-full text-text_primary w-9 h-9 bg-white"
                               >{{@index}}</span></span>
-                            <span class="text-[14px]">{{this}}</span>
+                            <span
+                              class="text-[14px] text-text_secondary lg:text-base"
+                            >{{this}}</span>
                           </li>
                         {{/if}}
                       {{/each}}
@@ -186,21 +195,23 @@
 
         <!-- section two -->
         <section
-          class="flex w-full md:w-1900 md:h-446 justify-center py-12 md:py-20 bg-cover bg-no-repeat bg-center bg-[url('img/about-s2-bg-aspect-ratio-1920-580.jpg.webp')]"
+          class="flex w-full max-w-[1900px] justify-center py-12 bg-cover bg-no-repeat bg-center bg-[url('img/about-s2-bg-aspect-ratio-1920-580.jpg.webp')] xl:py-20 "
         >
-          <div class="w-full md:w-1200 flex flex-col px-5">
+          <div class="w-full mx-auto flex flex-col px-5 md:px-8 xl:max-w-[1200px] ">
             <h2
-              class="text-white text-[25px] md:text-4xl md:pb-8 pb-5 uppercase"
+              class="text-white text-[25px] pb-5 uppercase md:text-[30px] lg:text-[39px] lg:pb-8"
             >{{aboutMeSec2Header}}</h2>
             <ul>
               {{#each aboutMeSec2List}}
-                <li class="text-white text-[15px] md:text-xl mb-8 pl-14 relative">
+                <li
+                  class="text-white text-[17px] mb-5 pl-14 relative lg:text-[21px] lg:pl-14 lg:mb-8"
+                >
                   <img
                     src="img/about-me-second-list-marker.svg"
-                    class="absolute left-1 top-1/2 -translate-y-1/2 w-6"
+                    class="absolute left-1 top-2 w-6"
                     alt="ico"
                   />
-                  <span> {{{this}}}</span>
+                  <span>{{{this}}}</span>
                 </li>
               {{/each}}
             </ul>
@@ -208,21 +219,21 @@
         </section>
 
         <!-- section three -->
-        <section class="flex w-full md:w-1900 justify-center md:py-10 pt-8 pb-2">
-          <div class="w-full md:w-1200 flex flex-col px-5">
+        <section class="flex w-full justify-center pt-8 pb-2 lg:py-10">
+          <div class="flex mx-auto w-full flex-col px-5 md:px-8 xl:max-w-[1200px]">
             <h2
-              class="text-text_primary text-[25px] md:text-4xl md:pb-8 pb-12 uppercase"
+              class="text-text_primary text-[30px] pb-12 uppercase md:text-[35px] lg:text-[39px]"
             >{{aboutMeSec3Header}}</h2>
             <ul class="flex w-full justify-between flex-col md:flex-row">
               {{#each aboutMeSec3List}}
                 <li class="md:flex-45 pb-14">
-                  <div class="h-52 md:mb-8 mb-2">
+                  <div class="h-52 mb-2 md:mb-8">
                     <img src="img/{{this.img}}" />
                   </div>
                   <h3
-                    class="text-text_primary text-lg md:text-3xl pb-5 uppercase"
+                    class="text-text_primary text-[23px] pb-5 uppercase lg:text-[26px]"
                   >{{{this.title}}}</h3>
-                  <p class="text-text_aboutMeSec3 text-[14px] md:text-xl">{{{this.text}}}</p>
+                  <p class="text-text_aboutMeSec3 text-[17px] lg:text-[21px]">{{{this.text}}}</p>
                 </li>
               {{/each}}
             </ul>
@@ -230,10 +241,10 @@
         </section>
 
         <!-- section footer bottom  -->
-        <div class="flex w-full md:w-1900 justify-center bg-white">
-          <div class="flex-col md:flex-row w-full md:w-1200 flex pt-5 pb-16 justify-between">
-            <span class="text-sm md:text-base px-7">All rights reserved</span>
-            <span class="text-sm md:text-base px-7">Created by
+        <div class="flex w-full justify-center bg-white">
+          <div class="flex flex-col w-full justify-between pt-5 pb-16 md:flex-row  lg:max-w-[1200px] lg:mx-auto">
+            <span class="text-sm md:text-base px-5 md:px-8">All rights reserved</span>
+            <span class="text-sm md:text-base px-5 md:px-8">Created by
               <a href="https://polbrandmedia.eu/" target="_blank">Polbrand Media</a></span>
           </div>
         </div>
