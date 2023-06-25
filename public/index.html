@@ -81,7 +81,7 @@
         </nav>
         <div
           id="mobile-menu-bottom"
-          class="hidden -z-10 absolute -bottom-16 -left-16 -right-16 bg-phoneSvg  h-48 rounded-[100%]"
+          class="hidden -z-10 absolute -bottom-16 -left-16 -right-16 bg-phoneSvg h-48 rounded-[100%]"
         ></div>
       </div>
 
@@ -146,13 +146,13 @@
           <div
             class="px-5 md:w-1/2 lg:w-[40%] xl:w-full xl:max-w-[1200px] xl:mx-auto xl:h-full xl:px-8"
           >
-            <div class="py-12 mt-6 h-80 md:mt-8 overflow-hidden lg:h-96 lg:mt-20 xl:w-1/3 xl:mt-32">
+            <div class="py-12 mt-6 h-80 md:mt-8 overflow-hidden lg:h-96 lg:mt-20 xl:w-2/5 xl:mt-32">
               <div class="dots flex gap-2 pb-2"></div>
               <div class="text-text_primary relative">
                 {{#each slidebox}}
                   <article class="slide absolute top-0 transition-all duration-500 ease-in">
                     <p
-                      class="text-[25px] font-bold pb-5 lg:text-[30px] xl:text-[39px]"
+                      class="text-[25px] font-bold pb-5 lg:text-[30px] xl:text-[39px] xl:leading-[130%]"
                     >{{this.title}}</p>
                     <p class="pb-5 lg:text-[18px] xl:text-[21px]">{{{this.text}}}</p>
                   </article>
@@ -166,9 +166,11 @@
         <section
           class="flex flex-col w-full bg-bg_sectionList md:flex-row md:justify-center xl:max-w-[1900px] xl:mx-auto"
         >
-          <div class="bg-[url('img/home-s2-img2.jpg')] bg-center bg-no-repeat bg-cover md:w-[45%] 2xl:justify-end 2xl:flex">
+          <div
+            class="bg-[url('img/home-s2-img2.jpg')] bg-center bg-no-repeat bg-cover md:w-[45%] 2xl:justify-end 2xl:flex"
+          >
             <h1
-              class="text-[30px] py-14 px-8 z-10 text-white font-bold lg:text-[35px] xl:text-[39px] xl:pl-32 xl:py-40  2xl:w-1/2 2xl:p-0 2xl:pr-32 2xl:my-auto"
+              class="text-[30px] py-14 px-8 z-10 text-white font-bold lg:text-[35px] xl:text-[39px] xl:pl-32 xl:py-40 2xl:w-1/2 2xl:p-0 2xl:pr-32 2xl:my-auto"
             >
               {{#each section2Header}}
                 {{this}}<br />
@@ -238,15 +240,21 @@
 
         <!-- section footer   -->
         <footer
-          class="hidden mx-auto md:flex w-full  md:justify-center md:bg-bg_footer  xl:max-w-[1900px] xl:mx-auto"
+          class="hidden mx-auto md:flex w-full md:justify-center md:bg-bg_footer xl:max-w-[1900px] xl:mx-auto"
         >
-          <div class="flex w-full px-8 py-10 items-center justify-between xl:py-14 xl:max-w-[1200px] xl:mx-auto">
-            <a href="index.html"><img src="img/logo.svg" class="h-[60px] xl:hidden" alt="Logo" /></a>
+          <div
+            class="flex w-full px-8 py-10 items-center justify-between xl:py-14 xl:max-w-[1200px] xl:mx-auto"
+          >
+            <a href="index.html"><img
+                src="img/logo.svg"
+                class="h-[60px] xl:hidden"
+                alt="Logo"
+              /></a>
             <ul id="nav-menu" class="flex">
               {{#each navMenu}}
                 <li class=""><a
                     href={{this.link}}
-                    class="nav-link  text-text_primary text-base pl-12 xl:text-[19px]  xl:pl-16 hover:text-text_footerLinkHover"
+                    class="nav-link text-text_primary text-base pl-12 xl:text-[19px] xl:pl-16 hover:text-text_footerLinkHover"
                   >
                     {{this.name}}</a></li>
               {{/each}}
@@ -255,7 +263,9 @@
         </footer>
         <!-- section footer bottom  -->
         <div class="flex w-full justify-center bg-white">
-          <div class="flex flex-col w-full justify-between pt-5 pb-16 md:flex-row  lg:max-w-[1200px] lg:mx-auto">
+          <div
+            class="flex flex-col w-full justify-between pt-5 pb-16 md:flex-row lg:max-w-[1200px] lg:mx-auto"
+          >
             <span class="text-sm md:text-base px-5 md:px-8">All rights reserved</span>
             <span class="text-sm md:text-base px-5 md:px-8">Created by
               <a href="https://polbrandmedia.eu/" target="_blank">Polbrand Media</a></span>
